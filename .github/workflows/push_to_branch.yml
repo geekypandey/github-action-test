@@ -36,5 +36,5 @@ jobs:
           git config --global user.name "geekypandey"
           git add -A
           git commit -m 'update data.json'
-          git push -f https://geekypandey:${{secret.GITHUB_TOKEN}}@github.com/geekypandey/github-action-test.git master:develop
+          git push -f https://geekypandey:${{secrets.GITHUB_TOKEN}}@github.com/geekypandey/github-action-test.git master:develop
 
