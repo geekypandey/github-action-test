@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: install
-        run : pip install -f requirements.txt
+        run : pip install -r requirements.txt
       - name: run file
         run : |
               python code.py
