@@ -22,8 +22,8 @@ jobs:
               python code.py
       - name: git push
         run: |
-              git config --global user.email "${{ inputs.email }}"
-              git config --global user.name "${{ inputs.name }}"
+              git config --global user.email "anuragcarbon1998@gmail.com"
+              git config --global user.name "geekypandey"
               
               git add -A
               git commit -m 'update data.json'
