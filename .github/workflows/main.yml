@@ -5,16 +5,27 @@ on:
       name:
         description: 'Person to greet'
         required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
+        default: 'geekypandey'
+      email:
+        description: 'email'
+        required: true
+        default: 'anuragcarbon1998@gmail.com'
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "Hello ${{ github.event.inputs.name }}!"
-          echo "- in ${{ github.event.inputs.home }}!"
+      - name: install
+        run : pip install -f requirements.txt
+      - name: run file
+        run : |
+              python code.py
+      - name: git push
+        run: |
+              git config --global user.email "${{ inputs.email }}"
+              git config --global user.name "${{ inputs.name }}"
+              
+              git add -A
+              git commit -m 'update data.json'
+              git push
+        
