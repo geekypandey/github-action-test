@@ -16,7 +16,7 @@ def get_unprocessed(cur_data, indices):
             yield index
 
 if __name__ == '__main__':
-    indices = [1]
+    indices = [1, 2]
     cur_data = read_file('data.json')
     url = "https://my-json-server.typicode.com/typicode/demo/comments/"
     data = []
