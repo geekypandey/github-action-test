@@ -7,6 +7,8 @@ on:
       - master
 
 jobs:
-  echo_hello:
-    - name: Say Hello
-      run: echo "Hello!"
+  say_hello:
+    - runs-on: ubuntu-lastest
+    - steps:
+      - name: Say Hello
+        run: echo "Hello!"
