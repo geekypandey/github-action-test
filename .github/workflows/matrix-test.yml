@@ -4,13 +4,14 @@ on: [ push ]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
         cc: [gcc, clang]
         curl: [openssl, gnutls, nss]
         kerberos: [libkrb5, heimdal]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Install Dependencies
