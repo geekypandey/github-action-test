@@ -9,15 +9,22 @@ jobs:
         cc: [gcc, clang]
         curl: [openssl, gnutls, nss]
         kerberos: [libkrb5, heimdal]
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest]
 
     runs-on: ${{ matrix.os }}
 
     steps:
+      - if: ${{ matrix.os }} == 'ubuntu-latest'
       - name: Install Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y ${{ matrix.cc }} \
+            libcurl4-${{ matrix.curl }}-dev \
+            ${{ matrix.kerberos }}-dev
+      - if: ${{ matrix.os }} == 'macos-latest'
+      - name: Install Dependencies
+        run: |
+          brew install -y ${{ matrix.cc }} \
             libcurl4-${{ matrix.curl }}-dev \
             ${{ matrix.kerberos }}-dev
       - name: Display Config
