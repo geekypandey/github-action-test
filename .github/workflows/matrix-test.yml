@@ -17,7 +17,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ${{ matrix.cc }} \
-            libcurl4-${{ matrix.curl }}-dev \\
+            libcurl4-${{ matrix.curl }}-dev \
             ${{ matrix.kerberos }}-dev
       - name: Display Config
         run: |
