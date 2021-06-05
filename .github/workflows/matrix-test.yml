@@ -22,7 +22,7 @@ jobs:
       - name: Display Config
         run: |
           echo "C Compiler:"
-          ${CC} --version
+          ${{ matrix.cc }} --version
 
           echo ""
           echo "Curl configuration:"
