@@ -9,7 +9,7 @@ jobs:
         cc: [gcc, clang]
         curl: [openssl, gnutls, nss]
         kerberos: [libkrb5, heimdal]
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
 
