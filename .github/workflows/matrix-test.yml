@@ -24,7 +24,7 @@ jobs:
       - if: ${{ matrix.os }} == 'macos-latest'
         name: Install Dependencies
         run: |
-          brew install -y ${{ matrix.cc }} \
+          brew install ${{ matrix.cc }} \
             libcurl4-${{ matrix.curl }}-dev \
             ${{ matrix.kerberos }}-dev
       - name: Display Config
