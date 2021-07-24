@@ -31,6 +31,7 @@ jobs:
         git push
     - name: Check last commit time
       run: |
+        sleep 5
         if python check_last_commit.py; then
           echo "New build ready"
         else
